@@ -1,0 +1,1 @@
+alert tcp any any -> any any (msg:“Probable successful phishing attack. (Boleto Malware)"; flow:established,to_server; content:"GET"; content:"/1dkfJu.php?"; sid: 10000001; rev:1;) 
