@@ -12,17 +12,21 @@ In Brazil, payments are made online using forms called “Boletos.” These form
 ### Breaking Down the Snort Rule
 
 #### Full Snort Rule: 
-alert tcp any any -> any any (msg:“Probable successful phishing attack. (Boleto Malware)"; flow:established,to_server; content:"GET"; content:"/1dkfJu.php?"; sid: 10000001; rev:1;) 
 
-####Breakdown
-alert - this tells Snort that we want to be alerted
-tcp - we are looking for tcp/HTTP traffic
-any any (first) - analyzing traffic from any source (in this case the user)
-any any (second) - analyzing traffic to any destination (the malicious web server)
-msg: - a description of the issue, the message we want to receive with the alert
-flow: - defines the traffic flow - in this case it is established and to_server
-content: - defining the specific content we are looking for - in this case “GET” and the PHP file name
-sid: - the Snort ID number
+```
+alert tcp any any -> any any (msg:“Probable successful phishing attack. (Boleto Malware)"; flow:established,to_server; content:"GET"; content:"/1dkfJu.php?"; sid: 10000001; rev:1;) 
+```
+
+#### Breakdown
+
+- alert - this tells Snort that we want to be alerted
+- tcp - we are looking for tcp/HTTP traffic
+- any any (first) - analyzing traffic from any source (in this case the user)
+- any any (second) - analyzing traffic to any destination (the malicious web server)
+- msg: - a description of the issue, the message we want to receive with the alert
+- flow: - defines the traffic flow - in this case it is established and to_server
+- content: - defining the specific content we are looking for - in this case “GET” and the PHP file name
+- sid: - the Snort ID number
 
 ### Test Case Evidence
 
