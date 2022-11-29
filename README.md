@@ -45,7 +45,6 @@ We created a local instance of Pi-Hole running in Docker.
 
 ### Background on Pi-Hole
 
-
 Pi-Hole is a tool developed by Jacob Samela. The purpose of Pi-Hole is to block domains at a network level. It works as a DNS sinkhole, primarily to block ads network-wide. This protects your network from ads and ad trackers without requiring any setup on individual devices. These blocks can be applied to any network device using the Pi-Hole as its DNS server.
 
 Using Pi-Hole allows users to escape the hassle and tediousness of having to block ads and trackers manually on each individual device, including web browsers, phones, tablets, and IoT devices. Pi-Hole requires the following:
@@ -58,21 +57,20 @@ Using Pi-Hole allows users to escape the hassle and tediousness of having to blo
 
 ### The Docker-Compose file
 
-
 #### Docker-Compose Breakdown
 
 How to Start the Container and Add Adlists:
 
 1. Open the command line and navigate to the folder with your docker-compose.yaml file
-2. Type in “docker-compose up -d”
+2. Type in `docker-compose up -d`
 - This will run through your docker-compose file and spin up a container for every entry it finds. In this case we only have Pihole in there so that is the only container it will create.
-- The “-d” creates it in detached mode so you won’t see all of the output from the process of creating it.
+- The `-d` creates it in detached mode so you won’t see all of the output from the process of creating it.
 3. Watch the console and if all goes well you should see that Pihole was created successfully.
-4. Navigate to the IP address of the machine it is on followed by “:8888/admin/login.php”
+4. Navigate to the IP address of the machine it is on followed by `:8888/admin/login.php`
 5. Sign in with the credentials you set in the docker-compose file
-6. Select “Adlists” from the side navigation bar. 
-7. Place in the adlists you would like to use in the “Address” field and hit “Add”
-8. Click on the link that says “online” in the Hints section to update the adlists in Pihole’s settings
+6. Select `Adlists` from the side navigation bar. 
+7. Place in the adlists you would like to use in the `Address` field and hit `Add`
+8. Click on the link that says `online` in the Hints section to update the adlists in Pihole’s settings
 
 General Tips:
 
@@ -86,20 +84,20 @@ General Tips:
 
 ![Running Interface](./imgs/Figure1.png)
 
-<figcaption>The Pihole interface</figcaption>
+<figcaption>Fig. 1: The Pihole interface</figcaption>
 
 ![Accepted and Denied Queries](./imgs/Figure2.png)
 
-<figcaption>Queries being allowed and blocked</figcaption>
+<figcaption>Fig. 2: Queries being allowed and blocked</figcaption>
 
 ![Adlists](./imgs/Figure3.png)
 
-<figcaption>Where to add adlists/blocklists</figcaption>
+<figcaption>Fig. 3: Where to add adlists/blocklists</figcaption>
 
 ![Blocking Disney.com](./imgs/Figure4.png)
 
-<figcaption>Blocking Disney.com for testing purposes</figcaption>
+<figcaption>Fig. 4: Blocking Disney.com for testing purposes</figcaption>
 
 ![Result of Disney block](./imgs/Figure5.png)
 
-<figcaption>Disney.com is blocked</figcaption>
+<figcaption>Fig. 5: Disney.com is blocked</figcaption>
