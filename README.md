@@ -87,3 +87,19 @@ General Tips:
 ![Running Interface](./imgs/Figure1.png)
 
 <figcaption>The Pihole interface</figcaption>
+
+![Accepted and Denied Queries](./imgs/Figure2.png)
+
+<figcaption>Queries being allowed and blocked</figcaption>
+
+![Adlists](./imgs/Figure3.png)
+
+<figcaption>Where to add adlists/blocklists</figcaption>
+
+![Blocking Disney.com](./imgs/Figure4.png)
+
+<figcaption>Blocking Disney.com for testing purposes</figcaption>
+
+![Result of Disney block](./imgs/Figure5.png)
+
+<figcaption>Disney.com is blocked</figcaption>
