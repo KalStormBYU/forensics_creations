@@ -64,13 +64,14 @@ How to Start the Container and Add Adlists:
 1. Open the command line and navigate to the folder with your docker-compose.yaml file
 2. Type in `docker-compose up -d`
 - This will run through your docker-compose file and spin up a container for every entry it finds. In this case we only have Pihole in there so that is the only container it will create.
-- The `-d` creates it in detached mode so you won’t see all of the output from the process of creating it.
+- The `-d` creates it in detached mode so you won’t see all of the output from the process of creating it
 3. Watch the console and if all goes well you should see that Pihole was created successfully.
 4. Navigate to the IP address of the machine it is on followed by `:8888/admin/login.php`
 5. Sign in with the credentials you set in the docker-compose file
-6. Select `Adlists` from the side navigation bar. 
+6. Select `Adlists` from the side navigation bar 
 7. Place in the adlists you would like to use in the `Address` field and hit `Add`
 8. Click on the link that says `online` in the Hints section to update the adlists in Pihole’s settings
+9. Specify your Pihole's IP Address as the DNS server on each device you would like to block ads on. Alternatively, you can specify it on your router settings so that your whole network has Pihole blocking enabled
 
 General Tips:
 
