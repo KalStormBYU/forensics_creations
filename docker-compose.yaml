@@ -1,19 +1,19 @@
 version: "3"
 services:
   pihole:
-    container_name: pihole
-    image: pihole/pihole:latest
-    ports:
+    container_name: pihole #This is the name that the container is given when it is launched. It can be anything you want.
+    image: pihole/pihole:latest #This is the actual image you are pulling from the web. The syntax is as follows: creator/image:tag
+    ports: #The ports below are all used to allow Pihole to act as a DNS sinkhole
       - "53:53/tcp"
       - "53:53/udp"
       - "67:67/udp"
-      - "8888:80/tcp"
+      - "8888:80/tcp" #When mapping ports in Docker the first port is the system the container is running on and the second is the port it is mapped to in the container.
     environment:
-      - WEBPASSWORD=12345678
+      - WEBPASSWORD=12345678 #Set this to be a secure password. Consider using a .env file for added security.
       - DNSMASQ_USER=root
-    volumes:
-      - /volume1/docker/pihole/pihole:/etc/pihole/
-      - /volume1/docker/pihole/dnsmasq.d:/etc/dnsmasq.d/
-    cap_add:
+    volumes: #Make sure to update the paths to wherever you want pihole to store its configuration files
+      - /pathtopihole/pihole:/etc/pihole/ #Like the ports, the first directory is the host system and the second one is the directory within the container.
+      - /pathtopihole/pihole/dnsmasq.d:/etc/dnsmasq.d/ #All paths on the host system must exist before running the docker-compose command.
+    cap_add: #Specifies permissions needed. In this case Pihole needs the Network Admin permissions to act as a sinkhole.
       - NET_ADMIN
-    restart: unless-stopped
+    restart: unless-stopped #The Pihole will restart after turning off unless the user manually stopped the service. This is useful for things like power outages.
