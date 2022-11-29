@@ -84,3 +84,4 @@ General Tips:
 
 ### Test Case Evidence
 
+![Running Interface](./imgs/Figure1.png)
