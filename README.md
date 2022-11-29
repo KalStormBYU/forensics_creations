@@ -49,10 +49,11 @@ We created a local instance of Pi-Hole running in Docker.
 Pi-Hole is a tool developed by Jacob Samela. The purpose of Pi-Hole is to block domains at a network level. It works as a DNS sinkhole, primarily to block ads network-wide. This protects your network from ads and ad trackers without requiring any setup on individual devices. These blocks can be applied to any network device using the Pi-Hole as its DNS server.
 
 Using Pi-Hole allows users to escape the hassle and tediousness of having to block ads and trackers manually on each individual device, including web browsers, phones, tablets, and IoT devices. Pi-Hole requires the following:
-At least 512mb of RAM,
-2GB of free storage space,
-Access to your router’s administration panel, and
-Internet connection from the server you’re installing Pi-Hole on to the router, either via Wi-Fi or via Ethernet cable.
+
+- At least 512mb of RAM,
+- 2GB of free storage space,
+- Access to your router’s administration panel, and
+- Internet connection from the server you’re installing Pi-Hole on to the router, either via Wi-Fi or via Ethernet cable.
 
 
 ### The Docker-Compose file
@@ -60,25 +61,25 @@ Internet connection from the server you’re installing Pi-Hole on to the router
 
 #### Docker-Compose Breakdown
 
-(I ended up just editing the actual file so you can just copy and paste it here if you want)
-
 How to Start the Container and Add Adlists:
-Open the command line and navigate to the folder with your docker-compose.yaml file
-Type in “docker-compose up -d”
-This will run through your docker-compose file and spin up a container for every entry it finds. In this case we only have Pihole in there so that is the only container it will create.
-The “-d” creates it in detached mode so you won’t see all of the output from the process of creating it.
-Watch the console and if all goes well you should see that Pihole was created successfully.
-Navigate to the IP address of the machine it is on followed by “:8888/admin/login.php”
-Sign in with the credentials you set in the docker-compose file
-Select “Adlists” from the side navigation bar. 
-Place in the adlists you would like to use in the “Address” field and hit “Add”
-Click on the link that says “online” in the Hints section to update the adlists in Pihole’s settings
+
+1. Open the command line and navigate to the folder with your docker-compose.yaml file
+2. Type in “docker-compose up -d”
+- This will run through your docker-compose file and spin up a container for every entry it finds. In this case we only have Pihole in there so that is the only container it will create.
+- The “-d” creates it in detached mode so you won’t see all of the output from the process of creating it.
+3. Watch the console and if all goes well you should see that Pihole was created successfully.
+4. Navigate to the IP address of the machine it is on followed by “:8888/admin/login.php”
+5. Sign in with the credentials you set in the docker-compose file
+6. Select “Adlists” from the side navigation bar. 
+7. Place in the adlists you would like to use in the “Address” field and hit “Add”
+8. Click on the link that says “online” in the Hints section to update the adlists in Pihole’s settings
 
 General Tips:
-Start with one or two adlists and then build from there. The more you add, the longer it will take to process each request. 
-If you use Pihole as a network wide DNS then make sure to have a backup DNS provider just in case the Pihole goes down. If you don’t specify a backup then you will be unable to access the internet via DNS. 
-If you like a list but it blocks a certain domain that you like, don’t edit the list–just add the domain you want to access to your whitelist!
-Remember that Pihole doesn’t just block computer ads. It can block telemetry, Smart TV ads, phone game ads, fake news websites, gambling sites, and inappropriate content.
+
+- Start with one or two adlists and then build from there. The more you add, the longer it will take to process each request. 
+- If you use Pihole as a network wide DNS then make sure to have a backup DNS provider just in case the Pihole goes down. If you don’t specify a backup then you will be unable to access the internet via DNS. 
+- If you like a list but it blocks a certain domain that you like, don’t edit the list–just add the domain you want to access to your whitelist!
+- Remember that Pihole doesn’t just block computer ads. It can block telemetry, Smart TV ads, phone game ads, fake news websites, gambling sites, and inappropriate content.
 
 
 ### Test Case Evidence
